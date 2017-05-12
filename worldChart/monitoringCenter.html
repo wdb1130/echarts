@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <title>honeyPot</title>
+  <link rel="stylesheet" href="monitoring.css">
+</head>
+<body  ng-controller='monitoringCtrl'>
+  <div class="test"></div>
+  <div id="monitoringCenter">
+    <header class="head">
+        <i class="icon-header"><img src="img/view.png" alt=""></i>
+       <span>监控中心</span>
+    </header>
+    <section class="main">
+      <div class="left">
+        <ul class="numShowList">
+          <li class="item">
+            <div class="img-box visit">
+              <img src="img/visit.png" alt="">
+            </div>
+            <div class="right">
+              <span>
+                访问数
+              </span><br>
+              <span class="visits">
+                {{12345}}
+              </span>
+            </div>
+          </li><li class="item">
+            <div class="img-box warn">
+              <img src="img/warn.png" alt="">
+            </div>
+            <div class="right">
+              <span>
+                报警数
+              </span><br>
+              <span class="alertNum">
+                {{45656}}
+              </span>
+            </div>
+          </li><li class="item">
+            <div class="img-box ip">
+              <img src="img/ip.png" alt="">
+            </div>
+            <div class="right">
+              <span>
+                访问数
+              </span><br>
+              <span class="threatIP">
+                {{12345}}
+              </span>
+            </div>
+          </li>
+        </ul>
+        <div class='worldMapBox'>
+           <div class='legend'>
+             <span class='icon-rect'></span>&nbsp;
+             <span>攻击源分布图</span>
+           </div>
+          <div id="worldMap"></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="lineChart">
+          <div class="titleBox">
+            <span class="title">
+              黑客入侵次数趋势图
+            </span>
+            <div class="dataFilter right">
+              <span ng-click='switch($event,0)'>周</span><span ng-click='switch($event,1)' class="active">
+              月</span><span ng-click='switch($event,2)'>
+              日</span>
+            </div>
+          </div>
+          <div id='line'></div>
+        </div>
+        <div class="dataList">
+          <div class="titleBox">
+            <span class="title">实时预警</span>
+            <span class="right">报警详情</span>
+          </div>
+          <ul class="list">
+            <li class="item" ng-repeat='item in dataList'>
+              <span>IP:&nbsp;&nbsp;</span>
+              <span class="ip">
+                {{item.ip}}
+              </span>
+              <span class="attackTime">
+                受到攻击----{{item.attackTime}}
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src='js/angular.js'></script>
+  <script src='js/jquery-3.1.1.js'></script>
+  <script src='js/echarts3.3.1.js'></script>
+  <script src='js/world.js'></script>
+  <script src='js/main.js'></script>
+</body>
+</html>
