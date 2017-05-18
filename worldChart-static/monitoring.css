@@ -1,0 +1,239 @@
+/*common style*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+#monitoringCenter {
+  position: fixed;
+  left: 115px;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+#monitoringCenter .left {
+  float:left ;
+}
+#monitoringCenter .right {
+  float: right;
+}
+#monitoringCenter .left::after {
+  display: block;
+  content:'';
+  clear: both;
+}
+#monitoringCenter .right::after {
+  display: block;
+  content:'';
+  clear: both;
+}
+#monitoringCenter span {
+  display: inline-block;
+}
+
+#monitoringCenter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*test style*/
+.test {
+  position: fixed;
+  width: 115px;
+  top: 0;
+  bottom: 0;
+  background-color: #0A0A0A;
+}
+
+/*header*/
+#monitoringCenter header {
+  height: 68px;
+  line-height: 68px;
+  padding-left: 25px;
+  background-color: #F1F1F1;
+}
+#monitoringCenter header img {
+  margin-bottom: -6px;
+}
+
+/*main style*/
+#monitoringCenter .main {
+  position: fixed;
+  top: 70px;
+  right: 0;
+  left: 115px;
+  bottom: 0;
+  padding-left: 25px;
+}
+#monitoringCenter .main>.left {
+  width: 65%;
+  min-width: 575px;
+  height: 100%;
+  position: relative;
+}
+
+#monitoringCenter .main>.left ul.numShowList {
+  width: 100%;
+  height: 96px;
+  margin: 25px 0;
+}
+
+#monitoringCenter .main>.left li.item {
+  display: inline-block;
+  width: 32%;
+  min-width: 180px;
+  margin-right: 2%; 
+  height: 100%;
+  border: 1px solid #ddd;
+}
+
+#monitoringCenter .main li.item:last-child {
+  margin: 0;
+}
+#monitoringCenter .main>.left li.item .img-box {
+  float: left;
+  height: 100%;
+  width: 40%;
+  text-align: center;
+  line-height: 110px;
+}
+/*img background*/
+#monitoringCenter .main>.left li.item .visit {
+  background-color: #FFB812;
+}
+#monitoringCenter .main>.left li.item .warn {
+  background-color: #FF7010;
+}
+#monitoringCenter .main>.left li.item .ip {
+  background-color: #FF5613;
+}
+#monitoringCenter .main li.item .right {
+  width: 60%;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+#monitoringCenter .main li.item .right span:last-child {
+  margin-top: 5px;
+  color: #F94F3E;
+  font-size: 30px;
+  margin-left: -3px;
+}
+
+/*world Chart*/
+#monitoringCenter .worldMapBox {
+  position: absolute;
+  top: 150px;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+}
+#monitoringCenter .worldMapBox .legend {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+}
+#monitoringCenter .worldMapBox .legend span:first-child {
+  width: 15px;
+  height: 8px;
+  background: #FF4D07;
+  margin-bottom: 1px;
+}
+#monitoringCenter #worldMap {
+  height: 100%;
+  width: 100%;
+}
+
+/*page right part */
+#monitoringCenter .main>.right {
+  width: 33%;
+  height: 100%;
+  padding-top: 25px;
+  padding-right: 20px;
+  max-width: 500px;
+}
+
+#monitoringCenter .right .titleBox {
+  height: 38px;
+  line-height: 38px;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+#monitoringCenter .right .titleBox>span:first-child {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/*line chart*/
+#monitoringCenter .main>.right .lineChart {
+  height: 45%;
+  max-height: 400px;
+  position: relative;
+  margin-bottom: 5%;
+}
+#monitoringCenter .right .titleBox .dataFilter span {
+  height: 36px;
+  width: 30px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  font-size: 14px;
+  cursor: pointer;
+}
+#monitoringCenter .right .titleBox .dataFilter span.active {
+  background-color: #FF4A0B;
+  color: #fff;
+}
+#monitoringCenter .right #line {
+  position: absolute;
+  top: 38px;
+  width: 100%;
+  bottom: 0;
+  border:1px solid #ddd;
+  border-top: none;
+}
+
+/* dataList*/
+#monitoringCenter .main>.right .dataList {
+  height: 50%;
+  position: relative;
+  margin-bottom: 3%;
+  min-width: 420px;
+}
+#monitoringCenter .main>.right .dataList .titleBox span.right {
+  height: 100%;
+  width: 80px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  font-size: 14px;
+}
+#monitoringCenter .main>.right .dataList ul.list {
+/*  position: absolute;
+  top: 38px;
+  bottom: 0;*/
+  width: 100%;
+  height: 395px;
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 15px 25px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+#monitoringCenter .main>.right .dataList ul.list .item {
+  width: 100%;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+#monitoringCenter .dataList .item span.ip {
+  background: #F3F3F3;
+  margin-right: 20px;
+  min-width: 100px;
+  text-align: center;
+  width: 33%;
+}
+#monitoringCenter .dataList .item span:last-child {
+  min-width: 200px;
+}
